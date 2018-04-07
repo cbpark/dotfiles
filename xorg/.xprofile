@@ -1,0 +1,15 @@
+# export LC_ALL="en_US.UTF-8"
+# export XMODIFIERS=@im=ibus
+# export GTK_IM_MODULE=ibus
+# export QT_IM_MODULE=ibus
+
+# Mouse acceleratoin
+xset m 4/1 0
+
+# Keyboard
+setxkbmap -option ctrl:nocaps
+setxkbmap -option altwin:swap_alt_win
+xset r rate 200 30
+
+# Natural scrolling
+[[ "" != $(xinput list | grep Logitech) ]] && xinput set-prop 'Logitech G100s Optical Gaming Mouse' 'libinput Natural Scrolling Enabled' 1
