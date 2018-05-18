@@ -261,6 +261,9 @@ alias tmuxkillall="tmux ls | cut -d : -f 1 | xargs -I {} tmux kill-session -t {}
 # Zsh-syntax-highlighting
 if [ -d $HOME/.zsh/plugins/zsh-syntax-highlighting ]; then
     source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=cyan,underline
+    ZSH_HIGHLIGHT_STYLES[precommand]=fg=cyan,underline
+    ZSH_HIGHLIGHT_STYLES[arg0]=fg=cyan
 fi
 
 command -v archey3 >/dev/null 2>&1 && archey3
