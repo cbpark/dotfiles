@@ -266,4 +266,4 @@ if [ -d $HOME/.zsh/plugins/zsh-syntax-highlighting ]; then
     ZSH_HIGHLIGHT_STYLES[arg0]=fg=cyan
 fi
 
-command -v archey3 >/dev/null 2>&1 && archey3
+# command -v archey3 >/dev/null 2>&1 && archey3
