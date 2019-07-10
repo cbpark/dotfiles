@@ -60,6 +60,11 @@ elif [ -d ${HOME}/.cabal ]; then
     export PATH=${HOME}/.cabal/bin${PATH:+:$PATH}
 fi
 
+# rustup
+if [ -d ${HOME}/.cargo ]; then
+    export PATH=${HOME}/.cargo/bin:$PATH
+fi
+
 # Unison
 if [ -x "$(command -v unison)" ]; then
     if [ $(uname) = 'Darwin' ]; then
