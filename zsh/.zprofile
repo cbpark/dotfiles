@@ -42,7 +42,7 @@ fi
 
 # Python
 export WORKON_HOME=${HOME}/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
     source /usr/bin/virtualenvwrapper_lazy.sh
 fi
