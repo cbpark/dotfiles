@@ -3,5 +3,6 @@
 :set +t
 :set -fno-warn-type-defaults
 :set -fobject-code
-:def hoogle \x -> return $ ":!hoogle \"" ++ x ++ "\""
+:set -ferror-spans -freverse-errors -fprint-expanded-synonyms
+:def hoogle \x -> return $ ":!hoogle --count=15 \"" ++ x ++ "\""
 :def doc \x -> return $ ":!hoogle --info \"" ++ x ++ "\""
