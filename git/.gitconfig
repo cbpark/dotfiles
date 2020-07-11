@@ -9,3 +9,5 @@
 
 [merge]
         tool = ediff
+[pull]
+	ff = only
