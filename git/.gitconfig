@@ -10,4 +10,7 @@
 [merge]
         tool = ediff
 [pull]
-	ff = only
+        ff = only
+[user]
+        name = cbpark
+        email = cbpark@gmail.com
