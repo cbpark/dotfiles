@@ -50,6 +50,11 @@ fi
 # ROOT
 command -v root-config >/dev/null 2>&1 && export ROOTSYS=$(root-config --prefix)
 
+# GSL
+if command -v gsl-config >/dev/null 2>&1; then
+    export C_INCLUDE_PATH=$(echo $(gsl-config --cflags) | cut -c 3-):$C_INCLUDE_PATH
+fi
+
 # ccache
 [[ -d /usr/lib/ccache ]] && export PATH=/usr/lib/ccache/bin:$PATH
 
