@@ -18,29 +18,6 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[1;32m'
 export LESS_TERMCAP_ue=$'\E[0m'
 
-# OS X
-if [ $(uname) = 'Darwin' ]; then
-    if [ -d /opt/local ]; then
-        export PATH=/opt/local/bin:/opt/local/sbin:${PATH}
-        export MANPATH=/opt/local/share/man:/opt/local/man:${MANPATH}
-
-        # Python
-        export PYTHONDIR=/opt/local/Library/Frameworks/Python.framework/Versions/Current
-
-        # autojump
-        export FPATH="$FPATH:/opt/local/share/zsh/site-functions/"
-        if [ -f /opt/local/etc/profile.d/autojump.sh ]; then
-            . /opt/local/etc/profile.d/autojump.sh
-        fi
-    fi
-
-    if [ -d /usr/local ]; then
-        export PATH=/usr/local/bin:${PATH}
-        export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
-        export MANPATH=/usr/local/share/man:${MANPATH}
-    fi
-fi
-
 # Python
 export WORKON_HOME=${HOME}/.virtualenvs
 # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
