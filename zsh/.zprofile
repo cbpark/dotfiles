@@ -6,7 +6,8 @@ export LC_ALL=en_US.UTF-8
 export COPYFILE_DISABLE=true
 export TERM='screen-256color'
 # export SUDO_EDITOR='/usr/bin/nano'
-# export EDITOR='/usr/bin/nano'
+export EDITOR='emacsclient -a \"\" -t'
+export VISUAL=$EDITOR
 
 export LESS=-R
 export LESS_TERMCAP_mb=$'\E[1;31m'
