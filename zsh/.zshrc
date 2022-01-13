@@ -29,11 +29,11 @@ setopt TRANSIENT_RPROMPT
 PS1="%{$fg_bold[green]%}%n@%m %{$fg_bold[yellow]%}%~ "$'\n'"$%{$reset_color%} "
 
 # Allow Emacs to track the current directory
-if [ -n "$INSIDE_EMACS" ]; then
-    chpwd() { print -P "\033AnSiTc %d" }
-    print -P "\033AnSiTu %n"
-    print -P "\033AnSiTc %d"
-fi
+# if [ -n "$INSIDE_EMACS" ]; then
+#     chpwd() { print -P "\033AnSiTc %d" }
+#     print -P "\033AnSiTu %n"
+#     print -P "\033AnSiTc %d"
+# fi
 
 # Emacs tramp
 if [[ $TERM == "dumb" ]]; then # in emacs
