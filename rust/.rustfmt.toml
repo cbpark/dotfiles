@@ -1,0 +1,4 @@
+max_width = 80
+fn_single_line = true
+fn_args_layout = "Tall"
+struct_field_align_threshold = 20
