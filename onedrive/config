@@ -143,7 +143,7 @@ skip_dir = "auto|tmp|.git|Wolfram*"
 #skip_dotfiles = "false"
 
 ## This setting controls which files are skipped during sync.
-skip_file = "~*|.~*|*.tmp|*.aux|*.log|*.nav|*.out|*.snm|*.synctex.gz|*.toc"
+skip_file = "~*|.~*|*.swp|*.partial|*.tmp|*.aux|*.log|*.nav|*.out|*.snm|*.synctex.gz|*.toc"
 
 ## Skip syncing files larger than this size in MB.
 #skip_size = "0"
