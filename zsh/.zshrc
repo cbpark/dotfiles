@@ -133,6 +133,13 @@ zstyle ':completion:*' rehash true
 zstyle '*' single-ignored show
 
 ########################################################################
+# SSH
+########################################################################
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    eval "$(ssh-agent -s)"
+fi
+
+########################################################################
 # Git
 ########################################################################
 autoload -Uz vcs_info
@@ -153,34 +160,6 @@ RPROMPT=\$vcs_info_msg_0_
 
 # pkgfile
 command -v pkgfile >/dev/null 2>&1 && source /usr/share/doc/pkgfile/command-not-found.zsh
-
-########################################################################
-# ALSAEqual
-########################################################################
-_seteq(){
-    amixer -D equal -q set '00. 31 Hz' $1
-    amixer -D equal -q set '01. 63 Hz' $2
-    amixer -D equal -q set '02. 125 Hz' $3
-    amixer -D equal -q set '03. 250 Hz' $4
-    amixer -D equal -q set '04. 500 Hz' $5
-    amixer -D equal -q set '05. 1 kHz' $6
-    amixer -D equal -q set '06. 2 kHz' $7
-    amixer -D equal -q set '07. 4 kHz' $8
-    amixer -D equal -q set '08. 8 kHz' $9
-    amixer -D equal -q set '09. 16 kHz' ${10}
-}
-
-seteq(){
-    case $1 in
-        classical) _seteq 71 71 71 71 71 71 84 83 83 87;;
-        headphones) _seteq 65 55 64 77 75 70 65 57 52 49;;
-        base) _seteq 59 59 59 63 70 78 85 88 89 89;;
-        live) _seteq 79 71 66 64 63 63 66 68 68 69;;
-        pop) _seteq 74 65 61 60 64 73 75 75 74 74;;
-        rock) _seteq 58 63 80 84 77 66 58 55 55 55;;
-        *) _seteq 66 66 66 66 66 66 66 66 66 66;;
-    esac
-}
 
 ########################################################################
 # Tmux
