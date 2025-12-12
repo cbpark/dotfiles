@@ -232,7 +232,6 @@ alias diff='diff -u --color=auto'
 alias nano='nano -w'
 
 alias r="source ~/.zshrc"
-alias rx="source ~/.xprofile"
 alias tat='tmux new-session -As $(basename "$PWD" | tr . -)'
 alias tmuxsrc="tmux source-file ~/.tmux.conf"
 alias tmuxkillall="tmux ls | cut -d : -f 1 | xargs -I {} tmux kill-session -t {}"
@@ -245,4 +244,5 @@ if [ -d $HOME/.zsh/plugins/zsh-syntax-highlighting ]; then
     ZSH_HIGHLIGHT_STYLES[arg0]=fg=cyan
 fi
 
-command -v archey3 >/dev/null 2>&1 && archey3
+# ghcup-env
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
