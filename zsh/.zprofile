@@ -34,19 +34,16 @@ if command -v gsl-config >/dev/null 2>&1; then
 fi
 
 # ccache
-[[ -d /usr/lib/ccache ]] && export PATH=/usr/lib/ccache/bin:$PATH
+[[ -d /usr/lib/ccache ]] && export PATH=/usr/lib/ccache/bin:${PATH}
 
 # Cabal
-if [ -d ${HOME}/Library/Haskell ]; then
-    export PATH=${HOME}/Library/Haskell/bin:$PATH
-elif [ -d ${HOME}/.cabal ]; then
-    export PATH=${HOME}/.cabal/bin${PATH:+:$PATH}
-fi
+[[ -d ${HOME}/.cabal ]] && export PATH=${HOME}/.cabal/bin:${PATH}
+
+# ghcup
+[[ -d ${HOME}/.ghcup ]] && export PATH=${HOME}/.ghcup/bin:${PATH}
 
 # rustup
-if [ -d ${HOME}/.cargo ]; then
-    export PATH=${HOME}/.cargo/bin:$PATH
-fi
+[[ -d ${HOME}/.cargo ]] && export PATH=${HOME}/.cargo/bin:${PATH}
 
 # Unison
 if [ -x "$(command -v unison)" ]; then
@@ -59,25 +56,6 @@ fi
 
 # For local things
 [[ -d ${HOME}/.local/bin ]] && export PATH=${HOME}/.local/bin:${PATH}
-
-# Nix
-if [ -d ${HOME}/.nix-profile ]; then
-    . ${HOME}/.nix-profile/etc/profile.d/nix.sh
-    export MANPATH=${HOME}/.nix-profile/share/man:${MANPATH}
-
-    # zsh
-    if [ -d ${HOME}/.nix-profile/share/zsh/site-functions ]; then
-        fpath=(${HOME}/.nix-profile/share/zsh/site-functions $fpath)
-    fi
-
-    # ghc
-    if [ -e ~/.nix-profile/bin/ghc ]; then
-        export NIX_GHC="$HOME/.nix-profile/bin/ghc"
-        export NIX_GHCPKG="$HOME/.nix-profile/bin/ghc-pkg"
-        export NIX_GHC_DOCDIR="$HOME/.nix-profile/share/doc/ghc/html"
-        export NIX_GHC_LIBDIR="$HOME/.nix-profile/lib/ghc-$($NIX_GHC --numeric-version)"
-    fi
-fi
 
 if [ -d ${HOME}/opt/local ]; then
     export PATH=${HOME}/opt/local/bin:${PATH}

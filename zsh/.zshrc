@@ -245,4 +245,4 @@ if [ -d $HOME/.zsh/plugins/zsh-syntax-highlighting ]; then
 fi
 
 # ghcup-env
-[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
+# [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
