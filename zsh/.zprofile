@@ -54,6 +54,9 @@ if [ -x "$(command -v unison)" ]; then
     fi
 fi
 
+# Doom
+[[ -d ${HOME}/.config/emacs/bin ]] && export PATH=${HOME}/.config/emacs/bin:${PATH}
+
 # For local things
 [[ -d ${HOME}/.local/bin ]] && export PATH=${HOME}/.local/bin:${PATH}
 
