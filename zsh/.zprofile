@@ -34,7 +34,7 @@ if command -v gsl-config >/dev/null 2>&1; then
 fi
 
 # ccache
-[[ -d /usr/lib/ccache ]] && export PATH=/usr/lib/ccache/bin:${PATH}
+[[ -d /usr/lib64/ccache ]] && export PATH=/usr/lib64/ccache:${PATH}
 
 # Cabal
 [[ -d ${HOME}/.cabal ]] && export PATH=${HOME}/.cabal/bin:${PATH}
