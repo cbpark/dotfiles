@@ -9,14 +9,18 @@ autoload -U colors && colors
 if [ "$TERM" != "dumb" ]; then
     if [ "$(uname)" = 'Linux' ]; then
         alias ls='ls --color=auto'
-        # Solarized Light palette (xterm-256color approximations):
-        # blue=33 cyan=37 green=64 yellow=136 orange=166 red=160
-        # magenta=125 violet=61 base2=254 base3=230
-        export LS_COLORS="rs=0:di=01;38;5;33:ln=01;38;5;37:mh=00:pi=48;5;230;38;5;136:so=01;38;5;125:do=01;38;5;125:bd=48;5;230;38;5;136;01:cd=48;5;230;38;5;136;01:or=48;5;230;38;5;160;01:mi=00:su=38;5;230;48;5;160:sg=30;48;5;136:ca=30;48;5;160:tw=38;5;230;48;5;64:ow=38;5;33;48;5;64:st=38;5;230;48;5;33:ex=01;38;5;64:*.tar=01;38;5;166:*.tgz=01;38;5;166:*.tar.gz=01;38;5;166:*.gz=01;38;5;166:*.zip=01;38;5;166:*.rar=01;38;5;166:*.7z=01;38;5;166:*.bz2=01;38;5;166:*.xz=01;38;5;166:*.zst=01;38;5;166:*.deb=01;38;5;166:*.rpm=01;38;5;166:*.jpg=38;5;125:*.jpeg=38;5;125:*.png=38;5;125:*.gif=38;5;125:*.bmp=38;5;125:*.svg=38;5;125:*.tiff=38;5;125:*.mp3=38;5;61:*.flac=38;5;61:*.wav=38;5;61:*.mp4=38;5;61:*.mkv=38;5;61:*.avi=38;5;61:*.mov=38;5;61:*.pdf=38;5;136:*.doc=38;5;136:*.docx=38;5;136:*.md=38;5;244"
+        # Nord palette (xterm-256color approximations):
+        # nord0 bg=236  nord3 gray=240  nord4 fg=253
+        # nord7 teal=108  nord8 blue=109  nord9 blue=110  nord10 darkblue=67
+        # nord11 red=167  nord12 orange=173  nord13 yellow=222
+        # nord14 green=150  nord15 purple=139
+        export LS_COLORS="rs=0:di=01;38;5;110:ln=01;38;5;108:mh=00:pi=48;5;253;38;5;222:so=01;38;5;139:do=01;38;5;139:bd=48;5;253;38;5;222;01:cd=48;5;253;38;5;222;01:or=48;5;253;38;5;167;01:mi=00:su=38;5;253;48;5;167:sg=30;48;5;222:ca=30;48;5;167:tw=38;5;253;48;5;150:ow=38;5;110;48;5;150:st=38;5;253;48;5;110:ex=01;38;5;150:*.tar=01;38;5;173:*.tgz=01;38;5;173:*.tar.gz=01;38;5;173:*.gz=01;38;5;173:*.zip=01;38;5;173:*.rar=01;38;5;173:*.7z=01;38;5;173:*.bz2=01;38;5;173:*.xz=01;38;5;173:*.zst=01;38;5;173:*.deb=01;38;5;173:*.rpm=01;38;5;173:*.jpg=38;5;139:*.jpeg=38;5;139:*.png=38;5;139:*.gif=38;5;139:*.bmp=38;5;139:*.svg=38;5;139:*.tiff=38;5;139:*.mp3=38;5;67:*.flac=38;5;67:*.wav=38;5;67:*.mp4=38;5;67:*.mkv=38;5;67:*.avi=38;5;67:*.mov=38;5;67:*.pdf=38;5;222:*.doc=38;5;222:*.docx=38;5;222:*.md=38;5;240"
     else
         alias ls='ls -G'
-        # export LSCOLORS=GxFxCxDxBxegedabagaced
-        export LSCOLORS=ExFxCxDxBxEGEDABAGACAD
+        # macOS LSCOLORS — Nord dark theme (fg/bg pairs, uppercase=bold):
+        # dir=blue-ish(b), symlink=teal(a/cyan slot), socket=magenta(e),
+        # pipe/block/char=yellow(d), exec=green(c), setuid=red on default
+        export LSCOLORS=ExGxFxdxCxegedabagacad
     fi
     export CLICOLOR=1
 fi
